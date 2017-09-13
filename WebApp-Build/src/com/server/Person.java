@@ -47,6 +47,7 @@ public class Person {
 	}
 
 	public void setCountry(String country) {
+		System.out.println("The Person set Country");
 		this.country = country;
 	}
 	
