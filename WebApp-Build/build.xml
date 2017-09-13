@@ -1,0 +1,36 @@
+<project name="MyWebApp" default="Buid-War" >
+
+	<target name="compileJavaCode">
+		<echo message="Compliling"></echo>
+		<delete dir="out"></delete>
+		<mkdir dir="out"/>
+	<javac srcdir="src" destdir="out">
+		<classpath>
+		<fileset dir="WebContent/WeB-INF/lib">
+		<include name="*.jar"/>
+		</fileset>
+		</classpath>
+	</javac>
+	
+	</target>
+<target name="Buid-War" 
+	depends="compileJavaCode">
+	<echo message="Building war"></echo>
+	<delete dir="dist"></delete>
+	<mkdir dir="dist"/>
+<war destfile="dist/${ant.project.name}.war">
+<include name="out/*.*"/>	 
+	<webinf dir="WebContent/WEB-INF"></webinf>
+</war>
+
+
+</target>	
+	
+	
+	
+	
+	
+	
+	
+	
+</project>
