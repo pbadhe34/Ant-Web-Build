@@ -42,6 +42,7 @@ public class Person {
 	}
 
 	public String getCountry() {
+		System.out.println("The Person get Country");
 		return country;
 	}
 
